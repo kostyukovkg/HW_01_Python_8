@@ -26,13 +26,11 @@ def guess_function(number:int=1) -> int:
         if predict > number:
             predict_h = predict
             predict = np.random.randint(predict_l, predict_h)
-            continue
         # if first prediction is less than a number, 
         # remember the prediction as a low bound and make a new guess given new borders
         elif predict < number:
             predict_l = predict
             predict = np.random.randint(predict_l, predict_h)
-            continue
         else:
             break
     return count
@@ -63,13 +61,11 @@ def guess_function_2(number:int=1) -> int:
         if predict > number:
             predict_h = predict
             predict = int((predict_h + predict_l) / 2)
-            continue
         # if first prediction is less than a number, 
         # remember the prediction as a low bound and make a new guess given new borders
         elif predict < number:
             predict_l = predict
             predict = int((predict_h + predict_l)/2)
-            continue
         else:
             break
     return count
@@ -87,7 +83,7 @@ def guess_game(guess_function) -> int:
     # make a list to fill with random 1000 numbers
     count_ls = []
     # fix the seed
-    # np.random.seed(1) 
+    np.random.seed(1) 
     # random array statement
     random_array = np.random.randint(1, 100, 1000)
     
