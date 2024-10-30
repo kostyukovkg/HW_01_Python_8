@@ -16,7 +16,7 @@ def guess_function(number:int=1) -> int:
     count = 0
     # we save unsuccessful attempts to restate the borders later
     # first stated highest and lowest borders
-    predict_h = 100
+    predict_h = 101
     predict_l = 1
     while True:
         # counter
@@ -32,6 +32,7 @@ def guess_function(number:int=1) -> int:
             predict_l = predict
             predict = np.random.randint(predict_l, predict_h)
         else:
+            print (f'Your number is {number}, number of tries: {count}')
             break
     return count
 
@@ -44,14 +45,13 @@ def guess_function_2(number:int=1) -> int:
     Returns:
         int: number of tries
     """
-    # first random prediction 
-    predict = 50 #np.random.randint(1, 100)
-
+    # first prediction 
+    predict = 50 
     # number of tries
     count = 0
     # we save unsuccessful attempts to restate the borders later
     # first stated highest and lowest borders
-    predict_h = 100
+    predict_h = 101
     predict_l = 1
     while True:
         # counter
@@ -67,6 +67,7 @@ def guess_function_2(number:int=1) -> int:
             predict_l = predict
             predict = int((predict_h + predict_l)/2)
         else:
+            print (f'Your number is {number}, number of tries: {count}')
             break
     return count
 
